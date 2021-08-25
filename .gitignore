@@ -1,0 +1,13 @@
+node_modules/
+Packages
+.build
+xcuserdata
+*.xcodeproj
+DerivedData/
+.DS_Store
+db.sqlite
+.swiftpm
+*.swp
+.env
+
+query { order: getOrder(id: "FBF9C172-E57E-49A8-8806-85F6C923E55A") { id } }

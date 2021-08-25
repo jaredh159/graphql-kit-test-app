@@ -1,0 +1,30 @@
+### This Request works fine, because it doesn't try to resolve the items
+
+POST {{endpoint}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query {
+  order: getOrder(id: "FBF9C172-E57E-49A8-8806-85F6C923E55A") {
+    id
+  }
+}
+
+### This Request works FAILS, because it tries to get order items
+
+POST {{endpoint}}
+Content-Type: application/json
+X-REQUEST-TYPE: GraphQL
+
+query {
+  order: getOrder(id: "FBF9C172-E57E-49A8-8806-85F6C923E55A") {
+    id
+    items {
+      title
+    }
+  }
+}
+
+###
+
+@endpoint = http://127.0.0.1:8080/graphql
